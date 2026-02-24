@@ -17,7 +17,11 @@ const Contact = () => {
       <div className="w-[80%] mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* contact info */}
-          <div>
+          <div
+            data-aos="fade-right"
+            data-aos-delay="0"
+            data-aos-anchor-placement="top-center"
+          >
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-semibold mb-4">Let&apos;s talk</h3>
@@ -69,7 +73,11 @@ const Contact = () => {
             </div>
           </div>
           {/* contact form */}
-          <div>
+          <div
+            data-aos="fade-left"
+            data-aos-delay="150"
+            data-aos-anchor-placement="top-center"
+          >
             <form className="bg-white dark:bg-gray-800 rounded-2xl p-8 space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
