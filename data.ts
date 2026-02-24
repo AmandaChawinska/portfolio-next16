@@ -161,6 +161,7 @@ export const projects = [
     techStack: ["Next.js", "TypeScript", "Stripe", "MongoDB"],
     demoUrl: "https://example.com",
     githubUrl: "https://github.com",
+    tag: ["All", "Web"],
   },
   {
     title: "Task Management App",
@@ -170,6 +171,7 @@ export const projects = [
     techStack: ["React", "Node.js", "Socket.io", "PostgreSQL"],
     demoUrl: "https://example.com",
     githubUrl: "https://github.com",
+    tag: ["All", "Web"],
   },
   {
     title: "AI Content Generator",
@@ -179,6 +181,7 @@ export const projects = [
     techStack: ["React", "Python", "OpenAI", "FastAPI"],
     demoUrl: "https://example.com",
     githubUrl: "https://github.com",
+    tag: ["All", "Mobile"],
   },
   {
     title: "Real Estate Platform",
@@ -188,6 +191,7 @@ export const projects = [
     techStack: ["Vue.js", "Node.js", "MongoDB", "Maps API"],
     demoUrl: "https://example.com",
     githubUrl: "https://github.com",
+    tag: ["All", "Mobile"],
   },
   {
     title: "Fitness Tracker",
@@ -197,6 +201,7 @@ export const projects = [
     techStack: ["React Native", "Firebase", "Node.js", "Charts"],
     demoUrl: "https://example.com",
     githubUrl: "https://github.com",
+    tag: ["All", "Mobile"],
   },
   {
     title: "Learning Management System",
@@ -206,6 +211,7 @@ export const projects = [
     techStack: ["Next.js", "Prisma", "AWS S3", "Stripe"],
     demoUrl: "https://example.com",
     githubUrl: "https://github.com",
+    tag: ["All", "Desktop"],
   },
 ];
 
