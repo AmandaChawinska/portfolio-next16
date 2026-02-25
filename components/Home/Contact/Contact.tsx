@@ -1,12 +1,39 @@
+"use client";
 import SectionHeading from "@/components/Helper/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { contactInfo, socialLinks } from "@/data";
 import { Send } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+
+type Status = "ready" | "sending" | "success" | "error";
 
 const Contact = () => {
+  const [status, setStatus] = useState<Status>("ready");
+
+  async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Błąd wysyłki");
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
+  }
   return (
     <div className="py-16 bg-gray-100 dark:bg-gray-950">
       <SectionHeading
@@ -78,7 +105,10 @@ const Contact = () => {
             data-aos-delay="150"
             data-aos-anchor-placement="top-center"
           >
-            <form className="bg-white dark:bg-gray-800 rounded-2xl p-8 space-y-6">
+            <form
+              className="bg-white dark:bg-gray-800 rounded-2xl p-8 space-y-6"
+              onSubmit={handleSubmit}
+            >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
@@ -138,6 +168,14 @@ const Contact = () => {
                 <Send className="size-4 mr-2" />
                 Send Message
               </Button>
+              {/* status */}
+              {status === "sending" && <p>Wysyłanie...</p>}
+              {status === "success" && (
+                <p className="text-green-500">Wiadomość wysłana!</p>
+              )}
+              {status === "error" && (
+                <p className="text-red-500">Coś poszło nie tak.</p>
+              )}
             </form>
           </div>
         </div>
