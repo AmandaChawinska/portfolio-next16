@@ -6,20 +6,28 @@ import { Textarea } from "@/components/ui/textarea";
 import { contactInfo, socialLinks } from "@/data";
 import { Send } from "lucide-react";
 import React, { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 
-type Status = "ready" | "sending" | "success" | "error";
+type FormValues = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 const Contact = () => {
-  const [status, setStatus] = useState<Status>("ready");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<FormValues>();
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null,
+  );
 
-  async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("sending");
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    setSubmitStatus(null);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -28,12 +36,14 @@ const Contact = () => {
       });
       if (!res.ok) throw new Error("Błąd wysyłki");
 
-      setStatus("success");
-      form.reset();
+      setSubmitStatus("success");
+      reset();
+      setTimeout(() => setSubmitStatus(null), 3000);
     } catch {
-      setStatus("error");
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus(null), 3000);
     }
-  }
+  };
   return (
     <div className="py-16 bg-gray-100 dark:bg-gray-950">
       <SectionHeading
@@ -107,7 +117,7 @@ const Contact = () => {
           >
             <form
               className="bg-white dark:bg-gray-800 rounded-2xl p-8 space-y-6"
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmit(onSubmit)}
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -116,11 +126,15 @@ const Contact = () => {
                   </label>
                   <Input
                     id="name"
-                    name="name"
-                    placeholder="Amanda Chawińska"
-                    required
+                    {...register("name", { required: "Podaj swoje imię" })}
+                    placeholder="Nazwa"
                     className="bg-gray-100"
                   />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm">
+                      {errors.name.message}
+                    </p>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
@@ -128,11 +142,22 @@ const Contact = () => {
                   </label>
                   <Input
                     id="email"
-                    name="email"
+                    type="email"
+                    {...register("email", {
+                      required: "Podaj swój email",
+                      pattern: {
+                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        message: "Nieprawidłowy adres email",
+                      },
+                    })}
                     placeholder="email@example.com"
-                    required
                     className="bg-gray-100"
                   />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="space-y-2">
@@ -141,11 +166,15 @@ const Contact = () => {
                 </label>
                 <Input
                   id="subject"
-                  name="subject"
-                  placeholder="Project Inquiry"
-                  required
-                  className="bg-gray-100"
+                  {...register("subject", { required: "Podaj temat" })}
+                  placeholder="Wpisz tytuł wiadomości"
+                  className="bg-gray-100 "
                 />
+                {errors.subject && (
+                  <p className="text-red-500 text-sm">
+                    {errors.subject.message}
+                  </p>
+                )}
               </div>
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">
@@ -153,27 +182,31 @@ const Contact = () => {
                 </label>
                 <Textarea
                   id="message"
-                  name="message"
-                  placeholder="Tell me about your project..."
+                  {...register("message", { required: "Wpisz wiadomość" })}
+                  placeholder="Wiadomość"
                   rows={5}
-                  required
                   className="bg-gray-100 h-40"
                 />
+                {errors.message && (
+                  <p className="text-red-500 text-sm">
+                    {errors.message.message}
+                  </p>
+                )}
               </div>
               <Button
                 type="submit"
-                size={"lg"}
+                size="lg"
                 className="w-full cursor-pointer"
+                disabled={isSubmitting}
               >
                 <Send className="size-4 mr-2" />
-                Send Message
+                {isSubmitting ? "Wysyłanie..." : "Send Message"}
               </Button>
               {/* status */}
-              {status === "sending" && <p>Wysyłanie...</p>}
-              {status === "success" && (
+              {submitStatus === "success" && (
                 <p className="text-green-500">Wiadomość wysłana!</p>
               )}
-              {status === "error" && (
+              {submitStatus === "error" && (
                 <p className="text-red-500">Coś poszło nie tak.</p>
               )}
             </form>
