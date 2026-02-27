@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="border-t bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 py-12">
       <div className="w-[80%] mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <a href="#home" className="text-xl font-bold text-indigo-700">
+          <a href="#" className="text-xl font-bold text-indigo-700">
             {"<Dev/>"}
           </a>
           <div className="flex items-center gap-4">
@@ -26,13 +26,14 @@ const Footer = () => {
             })}
           </div>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Made with{""}{" "}
-            <Heart className="size-4 text-destructive fill-destructive" /> by..
+            Wykonane z{""}{" "}
+            <Heart className="size-4 text-destructive fill-destructive" /> przez
+            Amanda Chawińska
           </p>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-300 dark:border-gray-800 text-center">
           <p className="text-sm text-muted-foreground ">
-            © {new Date().getFullYear()} All rights reserved.
+            © {new Date().getFullYear()} Wszelkie prawa zastrzeżone.
           </p>
         </div>
       </div>

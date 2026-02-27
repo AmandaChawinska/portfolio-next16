@@ -1,9 +1,9 @@
 export const NavLinks = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Skills", href: "#" },
-  { name: "Projects", href: "#" },
-  { name: "Experience", href: "#" },
-  { name: "Testimonials", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "Strona główna", href: "#" },
+  { name: "O mnie", href: "#about" },
+  { name: "Umiejętności", href: "#skills" },
+  { name: "Projekty", href: "#projects" },
+  { name: "Doświadczenie", href: "#experience" },
+  // { name: "Opinie", href: "#clientReview" },
+  { name: "Kontakt", href: "#contact" },
 ];

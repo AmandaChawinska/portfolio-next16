@@ -12,7 +12,7 @@ const Hero = () => {
         <div data-aos="fade-up" className="sm:mb-6">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-gray-600 text-sm text-muted-foreground dark:text-gray-200 mb-8">
             <span className="w-2 h-2 rounded-full bg-green-500"></span>
-            Available for opportunities
+            Otwarta na nowe wyzwania
           </span>
         </div>
         {/* title */}
@@ -21,10 +21,8 @@ const Hero = () => {
           data-aos-delay="100"
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
         >
-          Hi, I&apos;m{" "}
-          <span className="text-purple-800 dark:text-yellow-300">
-            Amanda Chawińska
-          </span>
+          Cześć, jestem{" "}
+          <span className="text-purple-800 dark:text-yellow-300">Amanda</span>
         </h1>
         {/* typewrite effects */}
         <div
@@ -53,8 +51,9 @@ const Hero = () => {
           data-aos-delay="300"
           className="text-lg text-muted-foreground dark:text-gray-200 max-w-2xl mx-auto mb-10 px-4"
         >
-          Crafting exceptional digital experiences with modern technologies.
-          Passionate about building scalable applications and teaching others.
+          Tworzę nowoczesne aplikacje webowe, dbając o jakość kodu i
+          doświadczenie użytkownika. Chętnie angażuję się w projekty, które
+          wymagają kreatywności i pasji technologicznej.
         </p>
         {/* buttons */}
         <div
@@ -63,15 +62,15 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Button size={"lg"} asChild className="w-fit mx-auto sm:mx-0">
-            <a href="#">
+            <a href="#projects">
               <FolderOpen className="w-5 h-5 mr-2" />
-              View Projects
+              Zobacz projekty
             </a>
           </Button>
           <Button size={"lg"} asChild className="w-fit mx-auto sm:mx-0">
             <a href="#">
               <Download className="w-5 h-5 mr-2" />
-              Download CV
+              Pobierz CV
             </a>
           </Button>
         </div>

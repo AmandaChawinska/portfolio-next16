@@ -45,11 +45,11 @@ const Contact = () => {
     }
   };
   return (
-    <div className="py-16 bg-gray-100 dark:bg-gray-950">
+    <div id="contact" className="py-16 bg-gray-100 dark:bg-gray-950">
       <SectionHeading
-        title_1="Get In"
-        title_2="Touch"
-        description="Have a project in mind or just want to say hi? I'd love to hear from you."
+        title_1="Skontaktuj się "
+        title_2="ze mną"
+        description="Masz pomysł na projekt lub szukasz kogoś do współpracy?"
       />
       <div className="w-[80%] mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -61,10 +61,9 @@ const Contact = () => {
           >
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-4">Let&apos;s talk</h3>
+                <h3 className="text-2xl font-semibold mb-4">Porozmawiajmy</h3>
                 <p className="text-muted-foreground">
-                  I&apos;m always open to discussing new projects, creative
-                  ideas, or opportunities to be part of your vision.
+                  Jestem otwarta na nowe wyzwania i ciekawe inicjatywy.
                 </p>
               </div>
               <div className="space-y-4">
@@ -91,7 +90,9 @@ const Contact = () => {
               </div>
               {/* social icons */}
               <div>
-                <h4 className="text-lg font-medium mb-4">Follow Me</h4>
+                <h4 className="text-lg font-medium mb-4">
+                  Znajdziesz mnie na:
+                </h4>
                 <div className="flex gap-3">
                   {socialLinks.map((link) => {
                     return (
@@ -122,12 +123,12 @@ const Contact = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
-                    Name
+                    Nazwa
                   </label>
                   <Input
                     id="name"
                     {...register("name", { required: "Podaj swoje imię" })}
-                    placeholder="Nazwa"
+                    placeholder="Wpisz swoje imię/nazwe"
                     className="bg-gray-100"
                   />
                   {errors.name && (
@@ -162,7 +163,7 @@ const Contact = () => {
               </div>
               <div className="space-y-2">
                 <label htmlFor="subject" className="text-sm font-medium">
-                  Subject
+                  Temat
                 </label>
                 <Input
                   id="subject"
@@ -178,7 +179,7 @@ const Contact = () => {
               </div>
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">
-                  Message
+                  Wiadomość
                 </label>
                 <Textarea
                   id="message"
@@ -200,7 +201,7 @@ const Contact = () => {
                 disabled={isSubmitting}
               >
                 <Send className="size-4 mr-2" />
-                {isSubmitting ? "Wysyłanie..." : "Send Message"}
+                {isSubmitting ? "Wysyłanie..." : "Wyślij wiadomość"}
               </Button>
               {/* status */}
               {submitStatus === "success" && (

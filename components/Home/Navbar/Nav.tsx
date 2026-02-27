@@ -26,7 +26,7 @@ const Nav = ({ openNav }: Props) => {
 
   return (
     <div
-      className={`transition-all ${navBg ? "dark:bg-gray-800 bg-white shadow-md" : "fixed"} duration-200 h-[12vh] z-100 fixed w-full`}
+      className={`transition-all ${navBg ? "dark:bg-gray-800 bg-white shadow-md" : "fixed"} duration-200 h-[12vh] z-1001 fixed w-full`}
     >
       <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
         {/* LOGO */}
@@ -54,7 +54,7 @@ const Nav = ({ openNav }: Props) => {
           >
             <span className="relative z-20 flex items-center space-x-2 text-sm">
               <Download className="w-4 h-4" />
-              <span>Download CV</span>
+              <span>Pobierz CV</span>
             </span>
           </a>
           {/* Theme Toggler */}

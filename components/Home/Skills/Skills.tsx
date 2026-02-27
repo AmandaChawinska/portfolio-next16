@@ -5,11 +5,11 @@ import React from "react";
 
 const Skills = () => {
   return (
-    <div className="py-16 bg-gray-100 dark:bg-gray-950">
+    <div id="skills" className="py-16 bg-gray-100 dark:bg-gray-950">
       <SectionHeading
-        title_1="Technical"
-        title_2="Skills"
-        description="Technologies I've been working with recently"
+        title_1="Umiejętności"
+        title_2="Techniczne"
+        description="Moje doświadczenie technologiczne"
       />
       <div className="space-y-12 w-[80%] mx-auto">
         {skillCategories.map((category) => {
@@ -24,7 +24,7 @@ const Skills = () => {
                   return (
                     <div
                       data-aos="zoom-in"
-                      data-aos-delay={index * 100}
+                      data-aos-delay={index * 50}
                       data-aos-anchor-placement="top-center"
                       key={index}
                     >

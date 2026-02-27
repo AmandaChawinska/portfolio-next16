@@ -15,14 +15,14 @@ export async function POST(req: Request) {
     }
 
     await resend.emails.send({
-      from: "TwojeImie <onboarding@resend.dev>",
-      to: "snakedragon43@gmail.com",
+      from: `${name} <${email}>`,
+      to: "amanda.chawinska@spoko.pl",
       subject: `[Portfolio Contact] ${subject}`,
       html: `
         <h2>Nowa wiadomość z portfolio</h2>
-        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Nazwa:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong><br/>${message.replace(/\n/g, "<br/>")}</p>
+        <p><strong>Wiadomość:</strong><br/>${message.replace(/\n/g, "<br/>")}</p>
       `,
     });
 

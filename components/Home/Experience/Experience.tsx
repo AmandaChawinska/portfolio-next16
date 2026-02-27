@@ -5,11 +5,11 @@ import React from "react";
 
 const Experience = () => {
   return (
-    <div className="py-16 bg-gray-100 dark:bg-gray-950">
+    <div id="experience" className="py-16 bg-gray-100 dark:bg-gray-950">
       <SectionHeading
-        title_1="Experience & "
-        title_2="Education"
-        description="My professional journey and academic background"
+        title_1="Doświadczenie zawodowe i  "
+        title_2="edukacja"
+        description="Moja ścieżka zawodowa oraz zaplecze edukacyjne."
       />
       <div className="relative px-6 max-w-4xl mx-auto">
         {/* timeline line */}

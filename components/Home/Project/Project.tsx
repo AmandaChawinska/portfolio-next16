@@ -6,7 +6,7 @@ import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 
 const Project = () => {
-  const [tag, setTag] = useState("All");
+  const [tag, setTag] = useState("Wszystkie");
 
   const handleTagChange = (newTag: string) => {
     setTag(newTag);
@@ -17,32 +17,32 @@ const Project = () => {
   );
 
   return (
-    <div className="py-16 bg-gray-100 dark:bg-gray-900">
+    <div id="projects" className="py-16 bg-gray-100 dark:bg-gray-900">
       <SectionHeading
-        title_1="Featured"
-        title_2="Projects"
-        description="A selection of my recent work and side projects"
+        title_1="Wybrane"
+        title_2="Projekty"
+        description="Przegląd moich najnowszych realizacji i projektów pobocznych"
       />
       <div className="flex gap-6 justify-center items-center pb-6">
         <ProjectTag
           onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
+          name="Wszystkie"
+          isSelected={tag === "Wszystkie"}
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
+          name="Vanilla JS / Frontend"
+          isSelected={tag === "Vanilla JS / Frontend"}
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
+          name="React/Next"
+          isSelected={tag === "React/Next"}
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Desktop"
-          isSelected={tag === "Desktop"}
+          name="WordPress"
+          isSelected={tag === "WordPress"}
         />
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-[80%] mx-auto">
@@ -50,7 +50,7 @@ const Project = () => {
           return (
             <div
               data-aos="fade-up"
-              data-aos-delay={index * 100}
+              data-aos-delay={index * 50}
               data-aos-anchor-placement="top-center"
               key={index}
             >

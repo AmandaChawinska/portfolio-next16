@@ -5,12 +5,12 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="py-16 bg-gray-100 dark:bg-gray-900">
+    <div id="about" className="py-16 bg-gray-100 dark:bg-gray-900">
       {/* Section heading */}
       <SectionHeading
-        title_1="About"
-        title_2="Me"
-        description="Get to know the developer behind the code"
+        title_1="O"
+        title_2="Mnie"
+        description="Poznaj mnie — twórcę projektów"
       />
       <div className="grid w-[80%] mx-auto lg:grid-cols-2 gap-12 items-center">
         {/* Image */}
@@ -21,11 +21,11 @@ const About = () => {
         >
           <div className="aspect-square rounded-2xl overflow-hidden p-2">
             <Image
-              src={"/images/user.jpg"}
+              src={"/images/user.png"}
               alt="profile"
               width={700}
               height={700}
-              className="w-full h-full object-center rounded-xl"
+              className="w-full h-full object-top object-cover rounded-xl"
             />
           </div>
         </div>
@@ -37,19 +37,23 @@ const About = () => {
           className="space-y-6"
         >
           <h3 className="text-2xl font-semibold">
-            A passionate developer who loves to create
+            Kreatywny deweloper z pasją do kodu
           </h3>
           <p className="text-muted-foreground leading-relaxed">
-            I&apos;m a full-stack developer with over 5 years of experience
-            building web applications. My journey started with curiosity about
-            how websites work, and it has evolved into a passion for creating
-            seamless, user-focused digital experiences.
+            Frontend Developer z 3+ latami doświadczenia w tworzeniu
+            customowych, responsywnych interfejsów webowych. Tworzę modularne
+            komponenty UI w JavaScript (ES6+) i Tailwind CSS, implementuję
+            dynamiczne funkcjonalności oraz integruję je z CMS (WordPress,
+            WooCommerce). Współpracuję z zespołem przy rozwoju i refaktoryzacji
+            istniejących projektów.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Beyond coding, I&apos;m dedicated to sharing knowledge. I&apos;ve
-            taught over 1000 students through online courses and mentorship
-            programs. I believe in continuous learning and staying updated with
-            the latest technologies.
+            Posiadam praktyczne doświadczenie w React, Next.js i TypeScript,
+            zdobyte w projektach osobistych. Tworzę skalowalne, modularne
+            interfejsy, stosuję nowoczesne biblioteki i najlepsze praktyki
+            ekosystemu React. Moje portfolio i projekty pokazują praktyczne
+            zastosowanie tych technologii w pełnych, funkcjonalnych interfejsach
+            webowych.
           </p>
           {/* Highlights */}
           <div className="grid sm:grid-cols-2 gap-4 pt-4">

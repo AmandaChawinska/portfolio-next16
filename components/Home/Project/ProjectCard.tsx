@@ -22,7 +22,7 @@ const ProjectCard = ({
   githubUrl,
 }: Props) => {
   return (
-    <div className="group relative bg-white dark:bg-gray-800 shadow-md rounded-2xl overflow-hidden">
+    <div className="group relative bg-white dark:bg-gray-800 shadow-md rounded-2xl overflow-hidden h-full">
       {/*Image*/}
       <div className="relative h-48 overflow-hidden">
         <Image
@@ -30,7 +30,7 @@ const ProjectCard = ({
           alt={title}
           width={400}
           height={400}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
         />
       </div>
       {/* main content*/}
@@ -38,9 +38,7 @@ const ProjectCard = ({
         <h3 className="text-xl text-black dark:text-white font-semibold mb-2 group-hover:text-blue-500 transition-colors">
           {title}
         </h3>
-        <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-          {description}
-        </p>
+        <p className="text-muted-foreground text-sm mb-4">{description}</p>
         {/* tech stacks*/}
         <div className="flex flex-wrap gap-2 mb-6">
           {techStack.map((tech) => {
