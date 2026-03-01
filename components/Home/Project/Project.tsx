@@ -23,7 +23,7 @@ const Project = () => {
         title_2="Projekty"
         description="Przegląd moich najnowszych realizacji i projektów pobocznych"
       />
-      <div className="flex gap-6 justify-center items-center pb-6">
+      <div className="flex flex-wrap gap-6 justify-center items-center pb-6">
         <ProjectTag
           onClick={handleTagChange}
           name="Wszystkie"

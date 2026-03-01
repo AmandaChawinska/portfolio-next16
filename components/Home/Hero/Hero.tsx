@@ -68,7 +68,7 @@ const Hero = () => {
             </a>
           </Button>
           <Button size={"lg"} asChild className="w-fit mx-auto sm:mx-0">
-            <a href="#">
+            <a href="/cv.pdf">
               <Download className="w-5 h-5 mr-2" />
               Pobierz CV
             </a>
