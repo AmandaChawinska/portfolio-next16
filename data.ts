@@ -516,25 +516,6 @@ export const projects = [
     tag: ["Wszystkie", "WordPress"],
   },
   {
-    title: "Omegadruk",
-    description:
-      "Strona prezentująca ofertę firmy z branży druku. Zbudowana w WordPress z użyciem ACF Pro.",
-    image: "/images/omegadruk.png",
-    techStack: [
-      "HTML",
-      "CSS",
-      "Tailwind CSS",
-      "PHP",
-      "WordPress",
-      "ACF Pro",
-      "JavaScript",
-      "Alpine.js",
-    ],
-    demoUrl: " https://omegadruk-dev.devheron.pl",
-    githubUrl: "",
-    tag: ["Wszystkie", "WordPress"],
-  },
-  {
     title: "11 bits",
     description: "Strona korporacyjna dla studia deweloperskiego.",
     image: "/images/11bits.png",
